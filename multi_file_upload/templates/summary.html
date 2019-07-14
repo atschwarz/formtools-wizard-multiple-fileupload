@@ -1,0 +1,11 @@
+<h1>Summary</h1>
+
+<p>You have uploaded the following files:</p>
+
+<ul>
+{% for file in files %}
+  <li> {{ file }} </li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'file-upload' %}">Upload more files</a>

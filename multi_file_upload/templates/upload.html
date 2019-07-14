@@ -1,0 +1,16 @@
+{% load crispy_forms_tags %}
+
+<h1>File Uploader</h1>
+
+<form method="post" enctype="multipart/form-data">
+  {{ wizard.form.media }}
+  {{ wizard.management_form }}
+  {% if wizard.form.forms %}
+      {{ wizard.form.management_form }}
+      {% for form in wizard.form.forms %}
+          {% crispy form %}
+      {% endfor %}
+  {% else %}
+      {% crispy form %}
+  {% endif %}
+</form>
